@@ -32,13 +32,13 @@ under `job_titles_path`), and which cities we will search for, we need to
 decide how many jobs we want to have for each job title in our dataset (e.g. 200).
 
 Then, if we divide this number by the length of the `city_list`, we get the
-correct `jobs_perTitle_perCity` parameter (eg. 200 / 8 = 25).
+correct `jobs_perQuery_perCity` parameter (e.g. 200 / 8 = 25).
 
 To set the minimum number of jobs that must be received in each query sent,
-use the `min_jobs_per_query` parameter. This should be higher than 
+use the `min_jobs_per_query` parameter. This should be higher than
 `jobs_perTitle_perCity` by at least 5, because of the unexpected failures.
 
-Once the checking starts, it might hang due to the server failing to respond 
+Once the checking starts, it might hang due to the server failing to respond
 or it might get interrupted by us manually. So, to avoid starting all over, we
 can use the `queries_completed` parameter to skip those and move forward faster.
 
@@ -49,7 +49,7 @@ Indeed.com uses for many of its jobs. We can now capture two such HTML layouts, 
 most of the posted jobs in the site.
 
 The code was also redesigned to allow for resuming the downloading from a saved checkpoint
-in case an error has occured previously and downloading stopped abruptly.
+in case an error has occurred previously and downloading stopped abruptly.
 
 <b>How to use it</b>:
 
@@ -59,22 +59,22 @@ work as required.
 First, we specify the paths to the job titles that we will query for, and to the
 result file that will be created or appended (in case it exists).
 
-The cities list is critical, since along with the `jobs_perTitle_perCity` parameter
+The cities list is critical, since along with the `jobs_perQuery_perCity` parameter
 it controls how many jobs we want to have per each job title. For example, if we want
 200 jobs for each title, we can set the parameter to 25 and have 8 cities that will
-all have at least 25 such jobs in their query results. To check if this might not 
+all have at least 25 such jobs in their query results. To check if this might not
 hold, we can use the <b>Result Set Checker</b> program.
 
 The `max_jobs_to_get` parameter can make the program stop earlier than it should
 and might be useful to quickly test something in the result set. Otherwise, it should
-be equal to the quantity of (#job_titles * #cities * #jobs_perTitle_perCity).
+be left as equal to `None`.
 
 The `jobs_stored` and the `append_mode` parameters are the most important
 to resuming downloading if required. The first should be set equal to the number of
 jobs currently stored in the results .csv, and the second should be set to True if
-we want to add more jobs. <b>It should only be set to False if we are starting a new
-query from the beginning or if we want to overwrite the old results, so be careful!</b>
-  
+we want to add more jobs. *It should only be set to False if we are starting a new
+query from the beginning or if we want to overwrite the old results, so be careful!*
+
 Finally, the `checkpoint_interval` is used to control how often the results are stored
 in the .csv (thus creating a checkpoint for future resuming) and the `allow_duplicates`
 is used to enable checking if the same job can be retrieved again (perhaps under a different job
