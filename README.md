@@ -1,5 +1,5 @@
 # Deep-Learning-Project
-
+![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/brain.jpeg)
 About the project...to be added soon!
 
 ## Code Files Manual
