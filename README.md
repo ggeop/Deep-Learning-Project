@@ -84,6 +84,6 @@ stored jobs are not checked under this condition.
 
 ## Application
 
-![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/insert_skills_1.jpeg)
+![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/insert_skills_1.png)
 
-![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/results_1.jpeg)
+![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/results_1.png)
