@@ -1,9 +1,7 @@
 import pandas as pd
-from keras.preprocessing.text import one_hot
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelBinarizer
-from keras.preprocessing.sequence import pad_sequences
-
+from keras.preprocessing.text import Tokenizer
 
 class DatasetSpliter(object):
 
@@ -26,24 +24,18 @@ class DatasetSpliter(object):
 
     def data_encode(self):
 
-        ###Training Data
-        # Encode the jobs descriptions
-        encoded_docs = [one_hot(d, self.vocab_size) for d in self.train_descs]
-        # pad documents to a max length
-        x_train = pad_sequences(encoded_docs, maxlen=self.max_length, padding='post')
-        #Binarize the job titles
+        # parameters
+        vocab_size = 1000
+
+        # define Tokenizer with Vocab Size
+        tokenizer = Tokenizer(num_words=vocab_size)
+        tokenizer.fit_on_texts(self.train_descs)
+        x_train = tokenizer.texts_to_matrix(self.train_descs, mode='tfidf')
+        x_test = tokenizer.texts_to_matrix(self.test_descs, mode='tfidf')
+
         encoder = LabelBinarizer()
         encoder.fit(self.train_labels)
         y_train = encoder.transform(self.train_labels)
-
-        ###Test Data
-        # Encode the jobs descriptions
-        encoded_docs = [one_hot(d, self.vocab_size) for d in self.test_descs]
-        # pad documents to a max length
-        x_test = pad_sequences(encoded_docs, maxlen=self.max_length, padding='post')
-        #Binarize the job titles
-        encoder = LabelBinarizer()
-        encoder.fit(self.test_labels)
         y_test = encoder.transform(self.test_labels)
 
         return x_train, y_train, x_test, y_test

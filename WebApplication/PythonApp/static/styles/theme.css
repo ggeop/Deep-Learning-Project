@@ -39,8 +39,8 @@ h1 {
     color: white;
 }
 
-textarea {
-    width: 100%;
+input {
+    width: 50%;
     height: 150px;
     padding: 12px 20px;
     box-sizing: border-box;

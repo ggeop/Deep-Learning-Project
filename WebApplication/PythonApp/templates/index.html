@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="theme.css">
+<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='styles/theme.css') }}">
 </head>
    <body>
       <div class="a">
-         <h1>Find you job!</h1>
+         <h1>I can find the best job for you!!</h1>
             <form action = "http://localhost:5000/result" method = "POST">
-               <p>Job Description <input type = "text" name = "Job" /></p>
+               <p>Write your skills..</p>
+               <input type = "text"  name = "Job" />
                <button class="button button1">Submit!</button>
             </form>
       </div>

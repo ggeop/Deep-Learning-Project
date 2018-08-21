@@ -1,25 +1,12 @@
 from keras.models import Sequential
-from keras.layers.core import Dense, Activation
+from keras.layers.core import Dense, Dropout, Activation
 from keras import metrics
-from keras.layers.embeddings import Embedding
-from keras.layers import Flatten
-
 from sklearn.preprocessing import LabelBinarizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import one_hot
 
 from dataset_handler import DatasetSpliter
 
-##Parameters
-# Encoding
-vocab_size = 500
-max_length = 500
-
-# Model
-num_labels = 25
-embedding_dimensios = 20
-nb_epoch = 30
-batch_size = 100
 
 class KerasFirstGoModel(object):
 
@@ -35,9 +22,17 @@ class KerasFirstGoModel(object):
         self.create_model()
 
     def create_model(self):
+        #parameters
+        num_labels = 25
+        vocab_size = 1000
+
         self.model = Sequential()
-        self.model.add(Embedding(vocab_size, embedding_dimensios, input_length=max_length))
-        self.model.add(Flatten())
+        self.model.add(Dense(512, input_shape=(vocab_size,)))
+        self.model.add(Activation('relu'))
+        self.model.add(Dropout(0.1))
+        self.model.add(Dense(512))
+        self.model.add(Activation('relu'))
+        self.model.add(Dropout(0.1))
         self.model.add(Dense(num_labels))
         self.model.add(Activation('softmax'))
 
@@ -50,11 +45,14 @@ class KerasFirstGoModel(object):
 
     def compile_model(self):
         self.model.compile(loss = 'categorical_crossentropy',
-                      optimizer = 'adam', # or 'sgd'
-                      metrics = [metrics.categorical_accuracy, 'accuracy'])
-        self.create_history()
+                           optimizer = 'adam', # or 'sgd'
+                           metrics = [metrics.categorical_accuracy, 'accuracy'])
 
     def create_history(self):
+        # parameters
+        batch_size = 500
+        nb_epoch = 30
+
         # fit the model
         self.model.fit(self.x_train, self.y_train,
                             batch_size=batch_size,
@@ -71,6 +69,10 @@ class KerasFirstGoModel(object):
 
 
     def prediction(self,user_text):
+        # parameters
+        max_length = 1000
+        vocab_size = 1000
+
         # Encode the text
         encoded_docs = [one_hot(user_text, vocab_size)]
 
