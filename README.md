@@ -83,7 +83,26 @@ we want a slight improvement in performance. Note that if downloading is resumed
 stored jobs are not checked under this condition.
 
 ## Application
+### Few words about it..
+This online application gives to the user the ability to write in free text their skills (soft & technical)
+and the application will recommend an appropriate job. The web interface is in Python Flask (http://flask.pocoo.org)
+and the high-level neural network API is Keras, written in Python.
 
+### Installation
+We'll be making the assumption that Keras is already configured and installed on your machine. If not, please ensure you install Keras using the official install instructions.
+From there, we'll need to install Flask (http://flask.pocoo.org) a Python web framework, so we can build our API endpoint. 
+
+In our case we preffered to use the Anaconda Python enviroment (you can download it from https://www.anaconda.com/download).
+
+### Dependencies
+(soon..)
+
+### How to run it
+Execute the app.py application and then open the submit page (http://127.0.0.1:5000/) of the application with a browser
+
+### Screenshots
+<b>The submit page of the application</b>
 ![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/insert_skills_1.jpg)
 
+<b>The result page of the application</b>
 ![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/result_1.jpg)
