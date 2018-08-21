@@ -81,3 +81,9 @@ is used to enable checking if the same job can be retrieved again (perhaps under
 title however) if it has already done so already. It should generally stay to False, unless
 we want a slight improvement in performance. Note that if downloading is resumed, the previously
 stored jobs are not checked under this condition.
+
+## Application
+
+![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/insert_skills_1.jpeg)
+
+![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/results_1.jpeg)
