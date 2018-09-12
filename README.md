@@ -1,4 +1,4 @@
-# Deep-Learning-Project
+# Deep-Learning-Project :collision:
 ![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/brain.jpeg)
 About the project...to be added soon!
 
@@ -93,9 +93,6 @@ We'll be making the assumption that Keras is already configured and installed on
 From there, we'll need to install Flask (http://flask.pocoo.org) a Python web framework, so we can build our API endpoint. 
 
 In our case we preffered to use the Anaconda Python enviroment (you can download it from https://www.anaconda.com/download).
-
-### Dependencies
-(soon..)
 
 ### How to run it
 Execute the app.py application and then open the submit page (http://127.0.0.1:5000/) of the application with a browser
