@@ -94,9 +94,6 @@ From there, we'll need to install Flask (http://flask.pocoo.org) a Python web fr
 
 In our case we preffered to use the Anaconda Python enviroment (you can download it from https://www.anaconda.com/download).
 
-### Dependencies
-(soon..)
-
 ### How to run it
 Execute the app.py application and then open the submit page (http://127.0.0.1:5000/) of the application with a browser
 
