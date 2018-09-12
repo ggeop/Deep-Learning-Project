@@ -149,8 +149,8 @@ The keyword used (after some cleaning to make them meaningful is used instead â€
 We investigate different models with different parametes + hyper parameters, the following models are our main approaches:
 
 * FFN Model (https://github.com/ggeop/Deep-Learning-Project/blob/master/Code/Keras-Models/FFN%20Model%20Testing.ipynb)
-* RNN Model (https://github.com/ggeop/Deep-Learning-Project/blob/master/Code/Keras-Models/Keras%20First%20Go.ipynb)
-* RNN Model + Embedding layer (https://github.com/ggeop/Deep-Learning-Project/blob/master/Code/Keras-Models/Second%20Model.ipynb)
+* Sequential Model (https://github.com/ggeop/Deep-Learning-Project/blob/master/Code/Keras-Models/Keras%20First%20Go.ipynb)
+* Sequential Model + Embedding layer (https://github.com/ggeop/Deep-Learning-Project/blob/master/Code/Keras-Models/Second%20Model.ipynb)
 * CNN Model (https://github.com/ggeop/Deep-Learning-Project/blob/master/Code/Keras-Models/Testing%20Area-CNN.ipynb)
 
 ### Best Model results
