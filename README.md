@@ -154,7 +154,7 @@ We investigate different models with different parametes + hyper parameters, the
 * CNN Model (https://github.com/ggeop/Deep-Learning-Project/blob/master/Code/Keras-Models/Testing%20Area-CNN.ipynb)
 
 ### Best Model results
-Finally, our best result was with simple RNN model (https://github.com/ggeop/Deep-Learning-Project/blob/master/Code/Keras-Models/Keras%20First%20Go.ipynb)
+Finally, our best result was the sequential model (https://github.com/ggeop/Deep-Learning-Project/blob/master/Code/Keras-Models/Keras%20Best%20Model.ipynb)
 In the following images you can see the performance of the model in test & validation dataset
 
 ![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/model_accuracy.PNG)
