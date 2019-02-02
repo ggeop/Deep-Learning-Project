@@ -1,4 +1,4 @@
-# Deep-Learning-Project :collision:
+# Job Recommendation Engine :collision:
 ![alt text](https://github.com/ggeop/Deep-Learning-Project/blob/master/Images/brain.jpeg)
 
 ## Introduction
